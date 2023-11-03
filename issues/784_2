@@ -108,3 +108,114 @@ line Error: 72 ,73
 [ros2 run controller_manager spawner panda_hand_controller-7] [INFO] [1698999144.681901238] [spawner_panda_hand_controller]: Configured and activated panda_hand_controller
 [INFO] [ros2 run controller_manager spawner panda_hand_controller-7]: process has finished cleanly [pid 58446]
 [rviz2-4] [INFO] [1698999147.342341962] [rviz2.planning_scene_monitor]: Failed to call service get_planning_scene, have you launched move_group or called psm.providePlanningSceneService()?
+
+
+
+Same error: 182-183
+
+adrielmicom:~/ws_moveit$ ros2 launch moveit2_tutorials motion_planning_python_api_tutorial.launch.py example_file:=motion_planning_python_api_planning_scene.py
+[INFO] [launch]: All log files can be found below /home/adri/.ros/log/2023-11-03-09-20-34-635287-adrielmicom-59412
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [motion_planning_python_api_planning_scene.py-1]: process started with pid [59413]
+[INFO] [robot_state_publisher-2]: process started with pid [59415]
+[INFO] [ros2_control_node-3]: process started with pid [59417]
+[INFO] [rviz2-4]: process started with pid [59419]
+[INFO] [static_transform_publisher-5]: process started with pid [59432]
+[INFO] [ros2 run controller_manager spawner panda_arm_controller-6]: process started with pid [59441]
+[INFO] [ros2 run controller_manager spawner panda_hand_controller-7]: process started with pid [59445]
+[INFO] [ros2 run controller_manager spawner joint_state_broadcaster-8]: process started with pid [59458]
+[ros2_control_node-3] [INFO] [1698999635.148950589] [resource_manager]: Loading hardware 'PandaFakeSystem' 
+[ros2_control_node-3] [INFO] [1698999635.149529145] [resource_manager]: Initialize hardware 'PandaFakeSystem' 
+[ros2_control_node-3] [WARN] [1698999635.149559850] [mock_generic_system]: Parsing of optional initial interface values failed or uses a deprecated format. Add initial values for every state interface in the ros2_control.xacro. For example: 
+[ros2_control_node-3] <state_interface name="velocity"> 
+[ros2_control_node-3]   <param name="initial_value">0.0</param> 
+[ros2_control_node-3] </state_interface>
+[ros2_control_node-3] [INFO] [1698999635.149571190] [resource_manager]: Successful initialization of hardware 'PandaFakeSystem'
+[ros2_control_node-3] [INFO] [1698999635.149588489] [resource_manager]: Loading hardware 'PandaHandFakeSystem' 
+[ros2_control_node-3] [INFO] [1698999635.149598405] [resource_manager]: Initialize hardware 'PandaHandFakeSystem' 
+[ros2_control_node-3] [INFO] [1698999635.149608046] [resource_manager]: Successful initialization of hardware 'PandaHandFakeSystem'
+[ros2_control_node-3] [INFO] [1698999635.149642962] [resource_manager]: 'configure' hardware 'PandaFakeSystem' 
+[ros2_control_node-3] [INFO] [1698999635.149649825] [resource_manager]: Successful 'configure' of hardware 'PandaFakeSystem'
+[ros2_control_node-3] [INFO] [1698999635.149656176] [resource_manager]: 'activate' hardware 'PandaFakeSystem' 
+[ros2_control_node-3] [INFO] [1698999635.149660698] [resource_manager]: Successful 'activate' of hardware 'PandaFakeSystem'
+[ros2_control_node-3] [INFO] [1698999635.149664502] [resource_manager]: 'configure' hardware 'PandaHandFakeSystem' 
+[ros2_control_node-3] [INFO] [1698999635.149668274] [resource_manager]: Successful 'configure' of hardware 'PandaHandFakeSystem'
+[ros2_control_node-3] [INFO] [1698999635.149672101] [resource_manager]: 'activate' hardware 'PandaHandFakeSystem' 
+[ros2_control_node-3] [INFO] [1698999635.149675942] [resource_manager]: Successful 'activate' of hardware 'PandaHandFakeSystem'
+[ros2_control_node-3] [INFO] [1698999635.156843836] [controller_manager]: update rate is 100 Hz
+[ros2_control_node-3] [INFO] [1698999635.171820571] [controller_manager]: RT kernel is recommended for better performance
+[static_transform_publisher-5] [INFO] [1698999635.193392779] [static_transform_publisher]: Spinning until stopped - publishing transform
+[static_transform_publisher-5] translation: ('0.000000', '0.000000', '0.000000')
+[static_transform_publisher-5] rotation: ('0.000000', '0.000000', '0.000000', '1.000000')
+[static_transform_publisher-5] from 'world' to 'panda_link0'
+[robot_state_publisher-2] [WARN] [1698999635.197938694] [kdl_parser]: The root link panda_link0 has an inertia specified in the URDF, but KDL does not support a root link with an inertia.  As a workaround, you can add an extra dummy link to your URDF.
+[robot_state_publisher-2] [INFO] [1698999635.199760028] [robot_state_publisher]: got segment panda_hand
+[robot_state_publisher-2] [INFO] [1698999635.200262507] [robot_state_publisher]: got segment panda_leftfinger
+[robot_state_publisher-2] [INFO] [1698999635.200574387] [robot_state_publisher]: got segment panda_link0
+[robot_state_publisher-2] [INFO] [1698999635.200859583] [robot_state_publisher]: got segment panda_link1
+[robot_state_publisher-2] [INFO] [1698999635.201126722] [robot_state_publisher]: got segment panda_link2
+[robot_state_publisher-2] [INFO] [1698999635.201379157] [robot_state_publisher]: got segment panda_link3
+[robot_state_publisher-2] [INFO] [1698999635.201627781] [robot_state_publisher]: got segment panda_link4
+[robot_state_publisher-2] [INFO] [1698999635.201872737] [robot_state_publisher]: got segment panda_link5
+[robot_state_publisher-2] [INFO] [1698999635.202118121] [robot_state_publisher]: got segment panda_link6
+[robot_state_publisher-2] [INFO] [1698999635.202364039] [robot_state_publisher]: got segment panda_link7
+[robot_state_publisher-2] [INFO] [1698999635.202612485] [robot_state_publisher]: got segment panda_link8
+[robot_state_publisher-2] [INFO] [1698999635.202866317] [robot_state_publisher]: got segment panda_rightfinger
+[motion_planning_python_api_planning_scene.py-1] [INFO] [1698999635.378279636] [moveit_cpp_initializer]: Initialize rclcpp
+[motion_planning_python_api_planning_scene.py-1] [INFO] [1698999635.379201465] [moveit_cpp_initializer]: Initialize node parameters
+[motion_planning_python_api_planning_scene.py-1] [INFO] [1698999635.379225128] [moveit_cpp_initializer]: Initialize node and executor
+[motion_planning_python_api_planning_scene.py-1] [INFO] [1698999635.413722734] [moveit_cpp_initializer]: Spin separate thread
+[motion_planning_python_api_planning_scene.py-1] [INFO] [1698999635.489596057] [moveit_3093295755.rdf_loader]: Loaded robot model in 0.0631821 seconds
+[motion_planning_python_api_planning_scene.py-1] [INFO] [1698999635.489624480] [moveit_robot_model.robot_model]: Loading robot model 'panda'...
+[motion_planning_python_api_planning_scene.py-1] [WARN] [1698999635.518538001] [kdl_parser]: The root link panda_link0 has an inertia specified in the URDF, but KDL does not support a root link with an inertia.  As a workaround, you can add an extra dummy link to your URDF.
+[motion_planning_python_api_planning_scene.py-1] [INFO] [1698999635.518623676] [moveit_kinematics_base.kinematics_base]: Joint weights for group 'panda_arm': 1 1 1 1 1 1 1
+[motion_planning_python_api_planning_scene.py-1] [INFO] [1698999635.561102425] [moveit_3093295755.planning_scene_monitor]: Publishing maintained planning scene on 'monitored_planning_scene'
+[motion_planning_python_api_planning_scene.py-1] [INFO] [1698999635.561219108] [moveit_3093295755.moveit_cpp]: Listening to '/joint_states' for joint states
+[motion_planning_python_api_planning_scene.py-1] [INFO] [1698999635.570755580] [moveit_3093295755.current_state_monitor]: Listening to joint states on topic '/joint_states'
+[motion_planning_python_api_planning_scene.py-1] [INFO] [1698999635.571127000] [moveit_3093295755.planning_scene_monitor]: Listening to '/moveit_cpp/planning_scene_monitor' for attached collision objects
+[motion_planning_python_api_planning_scene.py-1] [INFO] [1698999635.571141543] [moveit_3093295755.planning_scene_monitor]: Starting planning scene monitor
+[motion_planning_python_api_planning_scene.py-1] [INFO] [1698999635.571366153] [moveit_3093295755.planning_scene_monitor]: Listening to '/moveit_cpp/publish_planning_scene'
+[motion_planning_python_api_planning_scene.py-1] [INFO] [1698999635.571378133] [moveit_3093295755.planning_scene_monitor]: Starting world geometry update monitor for collision objects, attached objects, octomap updates.
+[motion_planning_python_api_planning_scene.py-1] [INFO] [1698999635.571656159] [moveit_3093295755.planning_scene_monitor]: Listening to 'collision_object'
+[motion_planning_python_api_planning_scene.py-1] [INFO] [1698999635.571914687] [moveit_3093295755.planning_scene_monitor]: Listening to 'planning_scene_world' for planning scene world geometry
+[motion_planning_python_api_planning_scene.py-1] [WARN] [1698999635.573141595] [moveit_3093295755.occupancy_map_monitor]: Resolution not specified for Octomap. Assuming resolution = 0.1 instead
+[motion_planning_python_api_planning_scene.py-1] [ERROR] [1698999635.573165687] [moveit_3093295755.occupancy_map_monitor]: No 3D sensor plugin(s) defined for octomap updates
+[ERROR] [motion_planning_python_api_planning_scene.py-1]: process has died [pid 59413, exit code -11, cmd '/home/adri/ws_moveit/install/moveit2_tutorials/lib/moveit2_tutorials/motion_planning_python_api_planning_scene.py --ros-args -r __node:=moveit_py --params-file /tmp/launch_params_l8tvxx2c'].
+[ros2_control_node-3] [INFO] [1698999635.835949164] [controller_manager]: Loading controller 'joint_state_broadcaster'
+[ros2 run controller_manager spawner joint_state_broadcaster-8] [INFO] [1698999635.865815809] [spawner_joint_state_broadcaster]: Loaded joint_state_broadcaster
+[ros2_control_node-3] [INFO] [1698999635.867416788] [controller_manager]: Configuring controller 'joint_state_broadcaster'
+[ros2_control_node-3] [INFO] [1698999635.867503184] [joint_state_broadcaster]: 'joints' or 'interfaces' parameter is empty. All available state interfaces will be published
+[ros2 run controller_manager spawner joint_state_broadcaster-8] [INFO] [1698999635.892989181] [spawner_joint_state_broadcaster]: Configured and activated joint_state_broadcaster
+[rviz2-4] [INFO] [1698999635.983615710] [rviz2]: Stereo is NOT SUPPORTED
+[rviz2-4] [INFO] [1698999635.983740062] [rviz2]: OpenGl version: 4.6 (GLSL 4.6)
+[INFO] [ros2 run controller_manager spawner joint_state_broadcaster-8]: process has finished cleanly [pid 59458]
+[rviz2-4] [INFO] [1698999636.090647001] [rviz2]: Stereo is NOT SUPPORTED
+[rviz2-4] [WARN] [1698999636.179788658] [rcl.logging_rosout]: Publisher already registered for provided node name. If this is due to multiple nodes with the same name then all logs for that logger name will go out over the existing publisher. As soon as any node with that name is destructed it will unregister the publisher, preventing any further logs for that name from being published on the rosout topic.
+[rviz2-4] [INFO] [1698999636.221053892] [rviz2.rdf_loader]: Loaded robot model in 0.0280506 seconds
+[rviz2-4] [INFO] [1698999636.221095934] [moveit_robot_model.robot_model]: Loading robot model 'panda'...
+[rviz2-4] [INFO] [1698999636.462853498] [rviz2.rdf_loader]: Loaded robot model in 0.00261916 seconds
+[rviz2-4] [INFO] [1698999636.462890025] [moveit_robot_model.robot_model]: Loading robot model 'panda'...
+[rviz2-4] [WARN] [1698999636.477588766] [rviz2.robot_model_loader]: No kinematics plugins defined. Fill and load kinematics.yaml!
+[rviz2-4] [INFO] [1698999636.526716543] [rviz2.planning_scene_monitor]: Starting planning scene monitor
+[rviz2-4] [INFO] [1698999636.527842783] [rviz2.planning_scene_monitor]: Listening to '/moveit_cpp/monitored_planning_scene'
+[ros2 run controller_manager spawner panda_hand_controller-7] [INFO] [1698999637.802742267] [spawner_panda_hand_controller]: Waiting for '/controller_manager' node to exist
+[ros2 run controller_manager spawner panda_arm_controller-6] [INFO] [1698999637.909520875] [spawner_panda_arm_controller]: Waiting for '/controller_manager' node to exist
+[ros2_control_node-3] [INFO] [1698999638.212378441] [controller_manager]: Loading controller 'panda_hand_controller'
+[ros2 run controller_manager spawner panda_hand_controller-7] [INFO] [1698999638.222923554] [spawner_panda_hand_controller]: Loaded panda_hand_controller
+[ros2_control_node-3] [INFO] [1698999638.224329802] [controller_manager]: Configuring controller 'panda_hand_controller'
+[ros2_control_node-3] [INFO] [1698999638.224397462] [panda_hand_controller]: Action status changes will be monitored at 20Hz.
+[ros2 run controller_manager spawner panda_hand_controller-7] [INFO] [1698999638.242666815] [spawner_panda_hand_controller]: Configured and activated panda_hand_controller
+[INFO] [ros2 run controller_manager spawner panda_hand_controller-7]: process has finished cleanly [pid 59445]
+[ros2_control_node-3] [INFO] [1698999638.920735862] [controller_manager]: Loading controller 'panda_arm_controller'
+[ros2_control_node-3] [WARN] [1698999638.947145247] [panda_arm_controller]: [Deprecated]: "allow_nonzero_velocity_at_trajectory_end" is set to true. The default behavior will change to false.
+[ros2 run controller_manager spawner panda_arm_controller-6] [INFO] [1698999638.952839859] [spawner_panda_arm_controller]: Loaded panda_arm_controller
+[ros2_control_node-3] [INFO] [1698999638.953789245] [controller_manager]: Configuring controller 'panda_arm_controller'
+[ros2_control_node-3] [INFO] [1698999638.953938204] [panda_arm_controller]: No specific joint names are used for command interfaces. Using 'joints' parameter.
+[ros2_control_node-3] [INFO] [1698999638.953961440] [panda_arm_controller]: Command interfaces are [position] and state interfaces are [position velocity].
+[ros2_control_node-3] [INFO] [1698999638.953977356] [panda_arm_controller]: Using 'splines' interpolation method.
+[ros2_control_node-3] [INFO] [1698999638.954925369] [panda_arm_controller]: Controller state will be published at 50.00 Hz.
+[ros2_control_node-3] [INFO] [1698999638.956509872] [panda_arm_controller]: Action status changes will be monitored at 20.00 Hz.
+[ros2 run controller_manager spawner panda_arm_controller-6] [INFO] [1698999638.982675913] [spawner_panda_arm_controller]: Configured and activated panda_arm_controller
+[INFO] [ros2 run controller_manager spawner panda_arm_controller-6]: process has finished cleanly [pid 59441]
+[rviz2-4] [INFO] [1698999641.530214226] [rviz2.planning_scene_monitor]: Failed to call service get_planning_scene, have you launched move_group or called psm.providePlanningSceneService()?
+
